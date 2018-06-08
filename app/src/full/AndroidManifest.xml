@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name="com.sissi.sourcesetsdemo.CActivity"
+            android:label="@string/title_activity_c"></activity>
+    </application>
+</manifest>
