@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SourceSetsDemo</string>
+    <string name="app_name_full">SourceSetsDemo</string>
+    <string name="app_name_demo">SourceSetsDemoDemo</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_login">LoginActivity</string>
 </resources>
