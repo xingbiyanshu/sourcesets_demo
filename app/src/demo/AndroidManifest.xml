@@ -3,6 +3,6 @@
     <application>
         <activity
             android:name="com.sissi.sourcesetsdemo.AActivity"
-            android:label="@string/title_activity_a"></activity>
+            android:label="@string/title_activity_a" />
     </application>
 </manifest>

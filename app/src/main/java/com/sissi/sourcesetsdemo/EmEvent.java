@@ -5,6 +5,7 @@ package com.sissi.sourcesetsdemo;
  */
 
 public enum  EmEvent {
+    WELCOME_FINISHED,
     LOGIN_SUCCESS,
 
     END;

@@ -7,9 +7,12 @@ import android.app.Activity;
  */
 
 public class BaseActivity extends Activity {
-    private ActivitySwitcher as = ActivitySwitcher.instance();
+    private IntentDispatcher intentDispatcher = IntentDispatcher.instance();
+    private AccessoryIntentDispatcher accessoryIntentDispatcher = AccessoryIntentDispatcher.instance();
 
     protected void emit(EmEvent event){
-        as.startActivity(this, event);
+        if (!intentDispatcher.processEvent(this, event)){
+            accessoryIntentDispatcher.processEvent(this, event);
+        }
     }
 }
