@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 
 /**
- * Created by Sissi on 2018/6/12.
+ * Created by Sissi on 2018/7/9.
  */
-// special intent dispatcher only applied to this source sets
+
 public class AccessoryIntentDispatcher {
     private static AccessoryIntentDispatcher instance = new AccessoryIntentDispatcher();
 
