@@ -36,29 +36,31 @@ android {
         }
     }
 
-//    buildTypes.all { buildType ->
-//        logger.quiet("buildType.name=$buildType.name")
-//        if (buildType.name != "release") {
-//            sourceSets[buildType.name].java.srcDir 'src/basic/java'
-//        }
-//    }
-
-    productFlavors.all{flavor->
+    productFlavors.all { flavor ->
         logger.quiet("flavor.name=$flavor.name")
-        if (flavor.name != "demo") {
-            sourceSets[flavor.name].java.srcDir 'src/first_level_common_stuff/java'
-            sourceSets[flavor.name].res.srcDir 'src/first_level_common_stuff/res' // srcDir是追加的方式,在默认的路径基础上追加该路径
-            sourceSets[flavor.name].manifest.srcFile 'src/first_level_common_stuff/AndroidManifest.xml' //manifest是排他的,此处设定会覆盖默认的路径
+
+        if (flavor.name != "keda") {
+            sourceSets[flavor.name].java.srcDir 'src/common_factor_2/java'
+//            sourceSets[flavor.name].res.srcDir 'src/common_factor_2/res' // srcDir是追加的方式,在默认的路径基础上追加该路径
+//            sourceSets[flavor.name].manifest.srcFile 'src/common_factor_2/AndroidManifest.xml' //manifest是排他的,此处设定会覆盖默认的路径
         }
 
-        sourceSets[flavor.name].java.srcDirs.each {srcDir->
+        if (flavor.name != "demo") {
+            sourceSets[flavor.name].java.srcDir 'src/common_factor_1/java'
+            sourceSets[flavor.name].res.srcDir 'src/common_factor_1/res' // srcDir是追加的方式,在默认的路径基础上追加该路径
+            sourceSets[flavor.name].manifest.srcFile 'src/common_factor_1/AndroidManifest.xml' //manifest是排他的,此处设定会覆盖默认的路径
+        }
+
+        // DEBUG
+        sourceSets[flavor.name].java.srcDirs.each { srcDir ->
             logger.quiet("java.srcDir.path=$srcDir.path")
         }
-        sourceSets[flavor.name].res.srcDirs.each {srcDir->
+        sourceSets[flavor.name].res.srcDirs.each { srcDir ->
             logger.quiet("res.srcDir.path=$srcDir.path")
         }
-        logger.quiet("manifest.path="+sourceSets[flavor.name].manifest.srcFile.path)
+        logger.quiet("manifest.path=" + sourceSets[flavor.name].manifest.srcFile.path)
     }
+
 }
 
 dependencies {
